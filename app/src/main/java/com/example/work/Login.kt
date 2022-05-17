@@ -11,15 +11,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 
 class Login : AppCompatActivity() {
 
-    val db = Firebase.firestore
     private lateinit var auth: FirebaseAuth
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,25 +24,7 @@ class Login : AppCompatActivity() {
         setContentView(R.layout.login)
 
         onClick()
-        test()
     }
-
-
-
-    private fun test() {
-        val  button = findViewById<Button>(R.id.test)
-        val user = hashMapOf(
-            "first" to "dd",
-            "last" to "Lovelace",
-            "born" to 1815
-        )
-        button.setOnClickListener{
-
-
-
-
-
-
 
 //            数据库读取
 
@@ -84,16 +63,6 @@ class Login : AppCompatActivity() {
 //                .addOnFailureListener { e ->
 //                    Log.w(TAG, "Error adding document", e)
 //                }
-        }
-    }
-
-
-
-
-
-
-
-
 
     private fun onClick() {
         val email = findViewById<EditText>(R.id.login_email)
@@ -104,8 +73,8 @@ class Login : AppCompatActivity() {
                 Toast.makeText(baseContext, "Please enter the E-mail",
                     Toast.LENGTH_SHORT).show()
             }else if(password.text.isEmpty()){   //未输入密码 报错
-                android.widget.Toast.makeText(baseContext, "Please enter the Password",
-                    android.widget.Toast.LENGTH_SHORT).show()
+                Toast.makeText(baseContext, "Please enter the Password",
+                    Toast.LENGTH_SHORT).show()
             }else {//进行登陆验证
                 loginEvent(
                     email.text.toString(), password.text.toString()

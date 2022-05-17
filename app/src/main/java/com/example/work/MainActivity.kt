@@ -8,8 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -41,28 +41,22 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-
         val fab: FloatingActionButton = binding.fab
-        initialUI()
-
-
-        val user = FirebaseAuth.getInstance().currentUser//判断是否保持登录状态
-        Toast.makeText(baseContext, "用户邮箱：${user?.email}", Toast.LENGTH_SHORT).show()
-
-
-//        if (user != null) {
-//            Toast.makeText(baseContext, "sign in.",
-//                Toast.LENGTH_SHORT).show()
-//        } else {
-//            Toast.makeText(baseContext, "No.",
-//                Toast.LENGTH_SHORT).show()
-//        }
+        initialUI()//初始化界面
+//        val user = FirebaseAuth.getInstance().currentUser//判断是否保持登录状态
+//        Toast.makeText(baseContext, "用户邮箱：${user?.email}", Toast.LENGTH_SHORT).show()
 
         fab.setOnClickListener {
             updateUI()
         }
+
+        binding.exitBtn.setOnClickListener{
+            FirebaseAuth.getInstance().signOut()
+            startActivity(Intent(this, Login::class.java))
+        }
+
     }
+
 
     private fun updateUI() {  //界面跳转
         startActivity(Intent(this, NewActivity::class.java))
@@ -95,10 +89,14 @@ class MainActivity : AppCompatActivity() {
                 val taskdate: TextView = holder.itemView.findViewById(R.id.task_date)
                 var taskstatus: TextView = holder.itemView.findViewById(R.id.task_status)
                 val image: ImageView = holder.itemView.findViewById(R.id.iv_board_image)
+                val enterBtn: LinearLayout = holder.itemView.findViewById(R.id.project_card)
 
                 taskname.text= model.name
                 taskdate.text= "Deadline:"+ model.date
                 taskstatus.text = model.status
+                enterBtn.setOnClickListener{//卡片点击事件
+                    startActivity(Intent(this@MainActivity, NewActivity::class.java))
+                }
                 getpicture(image, taskname)
             }
         }
@@ -126,7 +124,7 @@ class MainActivity : AppCompatActivity() {
 
         }.addOnFailureListener{
             if(progressDialog.isShowing) progressDialog.dismiss()
-            Toast.makeText(this,"Fail",Toast.LENGTH_SHORT).show()
+
         }
     }
 }

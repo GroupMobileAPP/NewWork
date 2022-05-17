@@ -1,22 +1,8 @@
 package com.example.work
 
-import android.app.ProgressDialog
-import android.content.Intent
-import android.graphics.BitmapFactory
-import android.media.Image
-import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.widget.Toast
-import com.example.work.databinding.ActivityMainBinding
+import androidx.appcompat.app.AppCompatActivity
 import com.example.work.databinding.TestpageBinding
-import com.google.firebase.storage.FirebaseStorage
-import kotlinx.android.synthetic.main.testpage.*
-import java.io.File
-import java.net.URI
-import java.text.SimpleDateFormat
-import java.util.*
 
 class TestActivity : AppCompatActivity() {
     lateinit var binding: TestpageBinding
@@ -25,36 +11,38 @@ class TestActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = TestpageBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.imageView.setOnClickListener{
 
-        }
-        binding.getImage.setOnClickListener{
-            getpicture()
+        binding.testSend.setOnClickListener{
+            sendMessage()
         }
     }
 
-    private fun getpicture() {
-
-        val progressDialog = ProgressDialog(this)
-        progressDialog.setMessage("Waiting....")
-        progressDialog.setCancelable(false)
-        progressDialog.show()
-
-
-        val name = binding.editTextTextPersonName.text.toString()
-        val storageRef= FirebaseStorage.getInstance().reference.child("images/$name")
-        val localfile = File.createTempFile("tempImage","jpg")
-        storageRef.getFile(localfile).addOnSuccessListener {
-
-            if(progressDialog.isShowing) progressDialog.dismiss()
-            val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
-            binding.imageView.setImageBitmap(bitmap)
-
-        }.addOnFailureListener{
-            if(progressDialog.isShowing) progressDialog.dismiss()
-            Toast.makeText(this,"Fail",Toast.LENGTH_SHORT).show()
-        }
+    private fun sendMessage() {
+        TODO("Not yet implemented")
     }
+
+//    private fun getpicture() {
+//
+//        val progressDialog = ProgressDialog(this)
+//        progressDialog.setMessage("Waiting....")
+//        progressDialog.setCancelable(false)
+//        progressDialog.show()
+//
+//
+//        val name = binding.editTextTextPersonName.text.toString()
+//        val storageRef= FirebaseStorage.getInstance().reference.child("images/$name")
+//        val localfile = File.createTempFile("tempImage","jpg")
+//        storageRef.getFile(localfile).addOnSuccessListener {
+//
+//            if(progressDialog.isShowing) progressDialog.dismiss()
+//            val bitmap = BitmapFactory.decodeFile(localfile.absolutePath)
+//            binding.imageView.setImageBitmap(bitmap)
+//
+//        }.addOnFailureListener{
+//            if(progressDialog.isShowing) progressDialog.dismiss()
+//            Toast.makeText(this,"Fail",Toast.LENGTH_SHORT).show()
+//        }
+//    }
 
 //    private fun uploadImage() {
 //        val progressDialog = ProgressDialog(this)

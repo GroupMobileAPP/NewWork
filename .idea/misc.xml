@@ -20,6 +20,7 @@
         <entry key="..\:/HomeWork/Mobile/work/app/src/main/res/layout/welcome.xml" value="0.1" />
         <entry key="..\:/HomeWork/example/work/app/src/main/res/drawable/add_button.xml" value="0.2165" />
         <entry key="..\:/HomeWork/example/work/app/src/main/res/drawable/card_style.xml" value="0.2055" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/drawable/edit_inputstyle.xml" value="0.215" />
         <entry key="..\:/HomeWork/example/work/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.2165" />
         <entry key="..\:/HomeWork/example/work/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2165" />
         <entry key="..\:/HomeWork/example/work/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2165" />
@@ -33,7 +34,7 @@
         <entry key="..\:/HomeWork/example/work/app/src/main/res/layout/fragment_notifications.xml" value="0.4" />
         <entry key="..\:/HomeWork/example/work/app/src/main/res/layout/item_board.xml" value="0.264" />
         <entry key="..\:/HomeWork/example/work/app/src/main/res/layout/login.xml" value="0.20520833333333333" />
-        <entry key="..\:/HomeWork/example/work/app/src/main/res/layout/newactivity.xml" value="0.1748610517315092" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/layout/newactivity.xml" value="0.2" />
         <entry key="..\:/HomeWork/example/work/app/src/main/res/layout/newtest.xml" value="0.19583333333333333" />
         <entry key="..\:/HomeWork/example/work/app/src/main/res/layout/register.xml" value="0.2477355072463768" />
         <entry key="..\:/HomeWork/example/work/app/src/main/res/layout/task_bar.xml" value="0.264" />
