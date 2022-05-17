@@ -33,9 +33,10 @@
         android:id="@+id/test_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="246dp" />
+        app:layout_constraintBottom_toTopOf="@+id/test_text"
+        app:layout_constraintStart_toStartOf="@+id/test_text" />
 </androidx.constraintlayout.widget.ConstraintLayout>
