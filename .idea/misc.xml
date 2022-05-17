@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/HomeWork/Mobile/work/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3335" />
+        <entry key="..\:/HomeWork/Mobile/work/app/src/main/res/drawable/add_button.xml" value="0.214" />
+        <entry key="..\:/HomeWork/Mobile/work/app/src/main/res/drawable/edit_background.xml" value="0.1645" />
+        <entry key="..\:/HomeWork/Mobile/work/app/src/main/res/drawable/edit_inputstyle.xml" value="0.215" />
+        <entry key="..\:/HomeWork/Mobile/work/app/src/main/res/drawable/edit_textview.xml" value="0.1645" />
+        <entry key="..\:/HomeWork/Mobile/work/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3335" />
+        <entry key="..\:/HomeWork/Mobile/work/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/HomeWork/Mobile/work/app/src/main/res/layout/firstpage.xml" value="0.16799999999999998" />
+        <entry key="..\:/HomeWork/Mobile/work/app/src/main/res/layout/fragment_main.xml" value="0.13858695652173914" />
+        <entry key="..\:/HomeWork/Mobile/work/app/src/main/res/layout/login.xml" value="0.22447916666666667" />
+        <entry key="..\:/HomeWork/Mobile/work/app/src/main/res/layout/newactivity.xml" value="0.264" />
+        <entry key="..\:/HomeWork/Mobile/work/app/src/main/res/layout/register.xml" value="0.2" />
+        <entry key="..\:/HomeWork/Mobile/work/app/src/main/res/layout/test.xml" value="0.2078125" />
+        <entry key="..\:/HomeWork/Mobile/work/app/src/main/res/layout/waitpage.xml" value="0.27445652173913043" />
+        <entry key="..\:/HomeWork/Mobile/work/app/src/main/res/layout/welcome.xml" value="0.1" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/drawable/add_button.xml" value="0.2165" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/drawable/card_style.xml" value="0.2055" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.2165" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.2165" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.2165" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/layout-sw600dp/activity_main.xml" value="0.3" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/layout/activity_main2.xml" value="0.4" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/layout/firstpage.xml" value="0.4" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/layout/fragment_dashboard.xml" value="0.4" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/layout/fragment_home.xml" value="0.4" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/layout/fragment_main.xml" value="0.4" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/layout/fragment_notifications.xml" value="0.4" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/layout/item_board.xml" value="0.264" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/layout/login.xml" value="0.20520833333333333" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/layout/newactivity.xml" value="0.1748610517315092" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/layout/newtest.xml" value="0.19583333333333333" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/layout/register.xml" value="0.2477355072463768" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/layout/task_bar.xml" value="0.264" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/layout/test.xml" value="0.2078125" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/layout/testpage.xml" value="0.2078125" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2078125" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.219" />
+        <entry key="..\:/HomeWork/example/work/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.219" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.2" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

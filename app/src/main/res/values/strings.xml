@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">work</string>
+    <string name="todo">TODO</string>
+    <string name="e_mail">E-mail</string>
+    <string name="password">PASSWORD</string>
+    <string name="login">LOGIN</string>
+    <string name="welcome">Welcome</string>
+    <string name="submit">Submit</string>
+    <string name="name">Name</string>
+    <string name="position">Position</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="manager">Manager</string>
+    <string name="member">Member</string>
+</resources>

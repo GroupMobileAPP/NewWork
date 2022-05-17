@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/newactivity_task"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/edit_inputstyle"
+            android:ems="10"
+            android:hint="Type the task"
+            android:inputType="textPersonName" />
+
+        <Button
+            android:id="@+id/newactivity_delete"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/white"
+            app:icon="@android:drawable/ic_notification_clear_all"
+            app:iconPadding="0dp"
+            app:iconSize="50dp"
+            app:iconTint="#EC5A5A" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
