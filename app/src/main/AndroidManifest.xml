@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.work">
+    package="com.example.work" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -13,19 +13,22 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Work">
-        <service android:name=".FirebaseService"
-            android:permission="com.google.android.c2dm.permission.SEND"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
-            </intent-filter>
+        android:theme="@style/Theme.Work" >
+        <activity
+            android:name=".ProjectActivity"
+            android:exported="false" />
 
-        </service>
-<!--        <activity-->
-<!--            android:name=".TestActivity"-->
-<!--            android:exported="false" />-->
+        <service
+            android:name=".FirebaseService"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service> <!-- <activity -->
+        <!-- android:name=".TestActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".NewActivity"
             android:exported="false" />
@@ -42,8 +45,11 @@
             android:name=".Login"
             android:exported="false" />
         <activity
-            android:name=".TestActivity"
-            android:exported="true">
+            android:name=".NewTask"
+            android:exported="false" />
+        <activity
+            android:name=".Firstpage"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

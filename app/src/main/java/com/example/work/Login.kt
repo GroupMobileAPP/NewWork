@@ -24,6 +24,18 @@ class Login : AppCompatActivity() {
         setContentView(R.layout.login)
 
         onClick()
+
+        val btn=findViewById<Button>(R.id.test)
+         btn.setOnClickListener{
+
+             var bundle:Bundle?=intent.extras
+             if(bundle!=null){
+                 var name:String?=bundle!!.getString("name")
+                 Toast.makeText(baseContext, "$name",
+                          Toast.LENGTH_SHORT).show()
+
+             }
+         }
     }
 
 //            数据库读取

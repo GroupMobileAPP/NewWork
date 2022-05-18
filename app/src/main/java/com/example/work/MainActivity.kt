@@ -26,13 +26,14 @@ import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 
+
 class MainActivity : AppCompatActivity() {
 
     private val db = Firebase.firestore
     private lateinit var auth: FirebaseAuth
     class UserViewHolder(itemView: View): RecyclerView.ViewHolder(itemView)
-
     private lateinit var binding: ActivityMainBinding
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,41 +68,90 @@ class MainActivity : AppCompatActivity() {
         auth= Firebase.auth
         val user = FirebaseAuth.getInstance().currentUser
         val user_email = "${user?.email}"
-        val query=db.collection("projects").whereEqualTo("manager",user_email)
+
         val position = db.collection("users").document(user_email)
         position.get().addOnSuccessListener {
-            if("${it.get("position")}"=="Manager") fab.isVisible = true
-        }
+            if("${it.get("position")}"=="Manager") {
+                fab.isVisible=true
+                var query=db.collection("projects").whereEqualTo("manager",user_email)
+                val options= FirestoreRecyclerOptions.Builder<Project>().setQuery(query,Project::class.java)
+                    .setLifecycleOwner(this).build()
+                val adapter = object : FirestoreRecyclerAdapter<Project, UserViewHolder>(options) {
+                    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
+                        val view = LayoutInflater.from(this@MainActivity)
+                            .inflate(R.layout.item_board, parent, false)
+                        return UserViewHolder(view)
+                    }
+                    override fun onBindViewHolder(holder: UserViewHolder, position: Int, model: Project) {
 
+                        val taskname: TextView = holder.itemView.findViewById(R.id.task_name)
+                        val taskdate: TextView = holder.itemView.findViewById(R.id.task_date)
+                        var taskstatus: TextView = holder.itemView.findViewById(R.id.task_status)
+                        val image: ImageView = holder.itemView.findViewById(R.id.iv_board_image)
+                        val enterBtn: LinearLayout = holder.itemView.findViewById(R.id.project_card)
 
-        val options= FirestoreRecyclerOptions.Builder<Project>().setQuery(query,Project::class.java)
-            .setLifecycleOwner(this).build()
-        val adapter = object : FirestoreRecyclerAdapter<Project, UserViewHolder>(options) {
-            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
-                val view = LayoutInflater.from(this@MainActivity)
-                    .inflate(R.layout.item_board, parent, false)
-                return UserViewHolder(view)
-            }
+                        taskname.text= model.name
+                        taskdate.text= "Deadline:"+ model.date
+                        taskstatus.text = model.status
 
-            override fun onBindViewHolder(holder: UserViewHolder, position: Int, model: Project) {
-
-                val taskname: TextView = holder.itemView.findViewById(R.id.task_name)
-                val taskdate: TextView = holder.itemView.findViewById(R.id.task_date)
-                var taskstatus: TextView = holder.itemView.findViewById(R.id.task_status)
-                val image: ImageView = holder.itemView.findViewById(R.id.iv_board_image)
-                val enterBtn: LinearLayout = holder.itemView.findViewById(R.id.project_card)
-
-                taskname.text= model.name
-                taskdate.text= "Deadline:"+ model.date
-                taskstatus.text = model.status
-                enterBtn.setOnClickListener{//卡片点击事件
-                    startActivity(Intent(this@MainActivity, NewActivity::class.java))
+//                        var intent = Intent(this@MainActivity,TaskActivity::class.java)
+//                        intent.putExtra("project_name",data)
+                        enterBtn.setOnClickListener{//卡片点击事件
+                            val data=model.name
+                            var intent = Intent(this@MainActivity,ProjectActivity::class.java)
+                            intent.putExtra("project_name","$data")
+                            intent.putExtra("position","Manager")
+                            startActivity(intent)
+                            //startActivity(Intent(this@MainActivity, NewActivity::class.java))
+                        }
+                        getpicture(image, taskname)
+                    }
                 }
-                getpicture(image, taskname)
+                task_view.adapter= adapter
+                task_view.layoutManager = LinearLayoutManager(this)
+            }
+
+            else{
+                var query=db.collection("tasks").whereEqualTo("email",user_email)
+                val options= FirestoreRecyclerOptions.Builder<Project>().setQuery(query,Project::class.java)
+                    .setLifecycleOwner(this).build()
+                val adapter = object : FirestoreRecyclerAdapter<Project, UserViewHolder>(options) {
+                    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
+                        val view = LayoutInflater.from(this@MainActivity)
+                            .inflate(R.layout.item_board, parent, false)
+                        return UserViewHolder(view)
+                    }
+                    override fun onBindViewHolder(holder: UserViewHolder, position: Int, model: Project) {
+
+                        val taskname: TextView = holder.itemView.findViewById(R.id.task_name)
+                        val taskdate: TextView = holder.itemView.findViewById(R.id.task_date)
+                        var taskstatus: TextView = holder.itemView.findViewById(R.id.task_status)
+                        val image: ImageView = holder.itemView.findViewById(R.id.iv_board_image)
+                        val enterBtn: LinearLayout = holder.itemView.findViewById(R.id.project_card)
+
+                        taskname.text= model.name
+                        taskdate.text= "Deadline:"+ model.date
+                        taskstatus.text = model.status
+                        val data=model.name
+                        var intent = Intent(this@MainActivity,ProjectActivity::class.java)
+                        intent.putExtra("project_name",data)
+                        intent.putExtra("position","Member")
+                        enterBtn.setOnClickListener{//卡片点击事件
+
+                            startActivity(intent)
+                            //startActivity(Intent(this@MainActivity, NewActivity::class.java))
+                        }
+                        getpicture(image, taskname)
+                    }
+                }
+                task_view.adapter= adapter
+                task_view.layoutManager = LinearLayoutManager(this)
             }
         }
-        task_view.adapter= adapter
-        task_view.layoutManager = LinearLayoutManager(this)
+
+
+
+
     }
 
 

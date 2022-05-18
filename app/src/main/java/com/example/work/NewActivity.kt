@@ -91,8 +91,12 @@ class NewActivity : AppCompatActivity() {
                 .set(project)
                 .addOnSuccessListener { documentReference ->
                     Log.d(ContentValues.TAG, "DocumentSnapshot successfully written!")
-                    uploadImage()
-                    startActivity(Intent(this@NewActivity, MainActivity::class.java))
+                    if(imageUri==null){
+                        startActivity(Intent(this@NewActivity, MainActivity::class.java))
+                    }else{
+                        uploadImage()
+                        startActivity(Intent(this@NewActivity, MainActivity::class.java))
+                    }
                 }
                 .addOnFailureListener { e ->
                     Log.w(ContentValues.TAG, "Error adding document", e)
